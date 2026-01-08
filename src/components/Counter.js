@@ -28,25 +28,3 @@ const Counter = () => {
 
 
 export default Counter;
-
-useEffect(() => {
-
-  const handleKeyPress = (event) => {
-
-    if (event.key === "ArrowUp") setCount((prev) => prev + 1);
-
-    if (event.key === "ArrowDown") setCount((prev) => prev - 1);
-
-  };
-
-
-  window.addEventListener("keydown", handleKeyPress);
-
-
-  return () => {
-
-    window.removeEventListener("keydown", handleKeyPress);
-
-  };
-
-}, []);

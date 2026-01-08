@@ -1,25 +1,43 @@
-import React from "react";
+import React, { useState } from 'react';
 
-import Counter from "./components/Counter";
+import Button from './components/Button';
 
-import Timer from "./components/Timer";
-const App = () => {
+import './App.css';
 
-  return (
 
-    <div style={{ textAlign: "center", margin: "20px" }}>
+function App() {
 
-      <h1>React State App</h1>
+    const [clickCount, setClickCount] = useState(0);
 
-      <Counter />
 
-      <Timer />
+    const handleButtonClick = () => {
 
-    </div>
+        setClickCount(clickCount + 1);
 
-  );
+    };
 
-};
+
+    return (
+
+        <div
+
+            className="app-container"
+
+            style={{
+
+                backgroundColor: clickCount % 2 === 0 ? '#f4f4f4' : '#ffebcd',
+
+            }}
+
+        >
+
+            <Button onClick={handleButtonClick} />
+
+        </div>
+
+    );
+
+}
 
 
 export default App;
